@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date difference</title>
+</head>
+<body>
+<input type="Date" id="date1">
+<button onclick="getd()"">Get Difference</button>
+
+<script type="text/javascript">
+	function getd()
+	{
+		var date1 = document.getElementById('date1').value;
+		var dt1=new Date(date1)
+       var date2 = new Date();
+       var timeDiff = Math.abs(date2.getTime() - dt1.getTime());
+       
+          var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+        alert(diffDays);
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript form validation - checking email</title>
+<link rel='stylesheet' href='form-style.css' type='text/css' />      
+</head>
+<body onload='document.form1.text1.focus()'>
+<div class="mail">
+<h2>Input an email and Submit</h2>
+<form name="form1" action="#"> 
+<input type='text' name='text1' id="mail"/>
+<input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/>
+<p id="demo"></p>
+</form>
+</div>
+<script>
+function ValidateEmail(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.value.match(mailformat))
+{
+str=inputText.value;
+len=str.length;
+res=str.charAt(0);
+sp=str.split("@");
+
+if(sp[0].length<=10)
+{
+
+if(res=='c' && str.endsWith("@caravel.ai"))
+{
+s=sp[0].length-3;
+if(s>=3)
+{
+	//ed=sp[0].substring(s,sp[0].length);
+sb=sp[0].substring(0,s);
+//document.write(sb);
+if(isNaN(sb))
+	//if(Number.isInteger(sb) && (isNan(ed) || !isNan(ed)))
+{
+document.write("Valid mail");
+//document.write(sb);
+}	
+}
+else //here has to check c and number
+{
+	document.write("Valid Email");
+}
+}
+else{
+	document.write("Starts with c and ends with caravel.ai");
+}
+}
+else
+{
+document.write("Length of email should not exceed 10 characters");
+}
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
+}
+</script>
+</body>
+</html>
+

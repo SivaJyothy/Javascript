@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<input type="text" id="data" placeholder="add element">
+
+<button onclick="myFunction(1)">Add</button>
+<button onclick="myFunction(2)">Delete</button>
+<p id="demo"></p>
+
+<script>
+var arr = ["array"];
+var c=document.getElementById('data').value;
+
+function myFunction(x) {
+if(x=='1')
+{
+var c=document.getElementById('data').value;
+  arr.push(c);
+  document.getElementById("demo").innerHTML = arr;
+  }
+  if(x=='2')
+  {
+  
+  arr.pop();
+  document.getElementById("demo").innerHTML = arr;
+  }
+}
+</script>
+
+</body>
+</html>

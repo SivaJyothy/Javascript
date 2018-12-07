@@ -1,0 +1,22 @@
+<html>
+<head>
+ <title>Gradient color</title>
+</head>
+<body>
+<div>
+<textarea rows="3" id="txt"></textarea>
+</div>
+<script>var bgh = "#";
+
+var col = ['a','b','c','d','e','f'];
+
+for (var i = 0 ; i < 6 ; i++) {
+    bgh += col[Math.floor(Math.random()*6)];        
+}
+
+   document.getElementById('txt').style.background = bgh;
+    
+
+</script>
+</body>
+</html>
